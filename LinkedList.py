@@ -40,43 +40,47 @@ class LinkedList:
         count = 0
         itr = self.head
         while itr:
-            itr = itr.next
             count += 1
+            itr = itr.next
         return count
     
     
-################################ Function to Insert Node at Given Index ################################
+################################ Function to Insert Node at Given Index(Indexing starts from 0) ################################
 
     def insert_at_index(self, data, index):
-        if index > 0 or index <= self.get_len():
-            if self.head is None:                 # If 1st Node / LinkedList is Empty
+        if index < 0 or index > self.get_len():
+            print("Enter valid Index")
+        else: 
+            if index == 0:                        # If 1st Node
                 self.insert_at_begining(data)
-
-            elif index-1 == self.get_len():       # If last Node
+                print(f"Node Inserted Sucessfully at Index {index}")
+            elif index == self.get_len():         # If last Node
                 self.insert_at_end(data)
-
+                print(f"Node Inserted Sucessfully at Index {index}")
             elif index < self.get_len():          # If new Node Insert anywhere in between two Nodes
-                count = 1
+                count = 0
                 itr = self.head
                 while count < index - 1:
                     itr = itr.next
                     count += 1
                 node = Node(data, itr.next)
                 itr.next = node
+                print(f"Node Inserted Sucessfully at Index {index}")
 
-################################ Function to Remove Node at Given Index ################################
+            
+
+################################ Function to Remove Node at Given Index (Indexing starts from 0) ################################
 
     def remove_at_index(self, index):
         if self.head is None:                            # If LinkedList is Empty
             print("LinkedList is Empty")                           
-        elif index >= 0 and index<= self.get_len():   
-            itr = self.head
-            
+        elif index >=0 and index < self.get_len():   
             if index == 0:                               # If we Remove 1st Node of LinkedList
                 self.head = self.head.next
                 print("Node Removed Sucessfully from the Start")
             else:
                 count = 0
+                itr = self.head
                 while itr: 
                     if count == index -1:
                         if itr.next.next is None:        # If we Remove Last Node of LinkedList
@@ -90,6 +94,8 @@ class LinkedList:
                     else:
                         itr = itr.next
                         count += 1
+        else:
+                print("Invalid Index")
                             
                                        
 ###################### Function to add node in Sorted(by value) Form ##############################
@@ -138,21 +144,21 @@ class LinkedList:
 if __name__ == "__main__":
     L = LinkedList()
     
-    L.remove_at_index(2)           # When our List is Empty
+    # L.remove_at_index(2)           # When our List is Empty
       
-    L.insert_at_end(7)
-    L.insert_at_end(8)
-    L.insert_at_begining(10)
-    L.insert_at_begining(2)
+    # L.insert_at_end(7)
+    # L.insert_at_end(8)
+    # L.insert_at_begining(10)
+    # L.insert_at_begining(2)
     
  
     
 
-    # L.insert_at_index(2,1)
-    # L.insert_at_index(3,2)
-    # L.insert_at_index(5,3)
-    # L.insert_at_index(6,4)
-    # L.insert_at_index(4,3)
+    L.insert_at_index(2,0)
+    L.insert_at_index(3,1)
+    L.insert_at_index(5,2)
+    L.insert_at_index(6,1)
+    L.insert_at_index(4,3)
 
     # L.insert_by_value(15)
     # L.insert_by_value(19)
@@ -164,11 +170,11 @@ if __name__ == "__main__":
 ########### Display LinkedList ##########################
 L.print()
 
-L.remove_at_index(3)
+L.remove_at_index(4)
 
 L.print()
 
-L.remove_at_index(1)
+L.remove_at_index(2)
 
 L.print()
 
@@ -179,4 +185,5 @@ L.print()
 ############ SIze of LinkedList #########################
 size = L.get_len()
 print(f"Size of LinkedList is: {size}")
+
     
