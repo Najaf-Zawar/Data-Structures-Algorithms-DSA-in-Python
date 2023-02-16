@@ -154,33 +154,33 @@ if __name__ == "__main__":
  
     
 
-    # L.insert_at_index(2,0)
-    # L.insert_at_index(3,1)
-    # L.insert_at_index(5,2)
-    # L.insert_at_index(6,1)
-    # L.insert_at_index(4,3)
+    L.insert_at_index(2,0)
+    L.insert_at_index(3,1)
+    L.insert_at_index(5,2)
+    L.insert_at_index(6,1)
+    L.insert_at_index(4,3)
 
-    L.insert_by_value(15)
-    L.insert_by_value(19)
-    L.insert_by_value(14)
-    L.insert_by_value(23)
-    L.insert_by_value(2)
+    # L.insert_by_value(15)
+    # L.insert_by_value(19)
+    # L.insert_by_value(14)
+    # L.insert_by_value(23)
+    # L.insert_by_value(2)
 
 
 ########### Display LinkedList ##########################
 L.print()
 
-# L.remove_at_index(4)
+L.remove_at_index(4)
 
-# L.print()
+L.print()
 
-# L.remove_at_index(2)
+L.remove_at_index(2)
 
-# L.print()
+L.print()
 
-# L.remove_at_index(0)
+L.remove_at_index(0)
 
-# L.print()
+L.print()
 
 ############ SIze of LinkedList #########################
 size = L.get_len()
